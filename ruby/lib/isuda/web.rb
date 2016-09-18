@@ -94,9 +94,12 @@ set :show_exceptions, false
         ! validation['valid']
       end
 
-      def htmlify(content)
+      def html_pattern
         keywords = db.xquery(%| select keyword from entry order by character_length(keyword) desc |)
-        pattern = keywords.map {|k| Regexp.escape(k[:keyword]) }.join('|')
+        keywords.map {|k| Regexp.escape(k[:keyword]) }.join('|')
+      end
+
+      def htmlify(content, pattern)
         kw2hash = {}
         hashed_content = content.gsub(/(#{pattern})/) {|m|
           matched_keyword = $1
@@ -151,8 +154,9 @@ set :show_exceptions, false
         LIMIT #{per_page}
         OFFSET #{per_page * (page - 1)}
       |)
+      pattern = html_pattern
       entries.each do |entry|
-        entry[:html] = htmlify(entry[:description])
+        entry[:html] = htmlify(entry[:description], pattern)
         entry[:stars] = load_stars(entry[:keyword])
       end
 
@@ -236,7 +240,8 @@ set :show_exceptions, false
 
       entry = db.xquery(%| select * from entry where keyword = ? |, keyword).first or halt(404)
       entry[:stars] = load_stars(entry[:keyword])
-      entry[:html] = htmlify(entry[:description])
+      pattern = html_pattern
+      entry[:html] = htmlify(entry[:description], pattern)
 
       locals = {
         entry: entry,
