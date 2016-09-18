@@ -98,17 +98,26 @@ set :show_exceptions, false
 
       def html_pattern
         keywords = db.xquery(%| select keyword from entry order by character_length(keyword) desc |)
-        keywords.map {|k| Regexp.escape(k[:keyword]) }.join('|')
+        # keywords.map {|k| Regexp.escape(k[:keyword]) }.join('|')
+        keywords.map {|k| k[:keyword] }
       end
 
       def htmlify(content, pattern)
         kw2hash = {}
-        hashed_content = content.gsub(/(#{pattern})/) {|m|
-          matched_keyword = $1
-          "isuda_#{Digest::SHA1.hexdigest(matched_keyword)}".tap do |hash|
-            kw2hash[matched_keyword] = hash
-          end
+        hashed_content = pattern.reduce(content) { |c, p|
+          c.gsub(p) {|m|
+            matched_keyword = p
+            "isuda_#{Digest::SHA1.hexdigest(matched_keyword)}".tap do |hash|
+              kw2hash[matched_keyword] = hash
+            end
+          }
         }
+        # hashed_content = content.gsub(/(#{pattern})/) {|m|
+        #   matched_keyword = $1
+        #   "isuda_#{Digest::SHA1.hexdigest(matched_keyword)}".tap do |hash|
+        #     kw2hash[matched_keyword] = hash
+        #   end
+        # }
         escaped_content = Rack::Utils.escape_html(hashed_content)
         kw2hash.each do |(keyword, hash)|
           keyword_url = url("/keyword/#{Rack::Utils.escape_path(keyword)}")
