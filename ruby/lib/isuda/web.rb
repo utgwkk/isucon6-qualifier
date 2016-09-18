@@ -93,26 +93,42 @@ module Isuda
 
       def html_pattern
         keywords = db.xquery(%| select keyword from entry order by character_length(keyword) desc |)
-        # keywords.map {|k| Regexp.escape(k[:keyword]) }.join('|')
+       # keywords.map {|k| Regexp.escape(k[:keyword]) }.join('|')
         keywords.map {|k| k[:keyword] }
       end
 
       def htmlify(content, pattern)
         kw2hash = {}
-        hashed_content = pattern.reduce(content) { |c, p|
-          c.gsub(p) {|m|
-            matched_keyword = p
-            "isuda_#{Digest::SHA1.hexdigest(matched_keyword)}".tap do |hash|
-              kw2hash[matched_keyword] = hash
-            end
-          }
+# hashed_content = pattern.reduce([content]) { |conts, pat| 
+#   conts.each_slice(2).to_a
+#   conts.each_slice(2).flat_map{|(c, np)|
+#     a = c.split(pat).flat_map{|x| [x, pat] }
+#     a[-1]=np
+#     a
+#   }
+# }[-1]
+# escaped_content = hashed_content.each_slice(2).flat_map{|cont, pat|
+#           keyword_url = url("/keyword/#{Rack::Utils.escape_path(keyword)}")
+#           anchor = '<a href="%s">%s</a>' % [keyword_url, Rack::Utils.escape_html(keyword)]
+#         [Rack::Utils.escape_html(cont), anchor]
+# }.join("")
+
+
+  
+        #hashed_content = content.gsub(/(#{pattern})/) {|m|
+        #  keyword = $1
+        #  keyword_url = url("/keyword/#{Rack::Utils.escape_path(keyword)}")
+        #  anchor = '<a href="%s">%s</a>' % [keyword_url, Rack::Utils.escape_html(keyword)]
+        #  escaped_content.gsub!(hash, anchor)
+        #}
+
+        i = pattern.select{|pat| content.include?(pat) }.map{|pat|Regexp.escape(pat)}.join("|")
+        hashed_content = content.gsub(/(#{i})/) {|m|
+          matched_keyword = $1
+          "isuda_#{Digest::SHA1.hexdigest(matched_keyword)}".tap do |hash|
+            kw2hash[matched_keyword] = hash
+          end
         }
-        # hashed_content = content.gsub(/(#{pattern})/) {|m|
-        #   matched_keyword = $1
-        #   "isuda_#{Digest::SHA1.hexdigest(matched_keyword)}".tap do |hash|
-        #     kw2hash[matched_keyword] = hash
-        #   end
-        # }
         escaped_content = Rack::Utils.escape_html(hashed_content)
         kw2hash.each do |(keyword, hash)|
           keyword_url = url("/keyword/#{Rack::Utils.escape_path(keyword)}")
