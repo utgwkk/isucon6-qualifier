@@ -19,11 +19,6 @@ module Isutar
     set :isuda_dsn, ENV['ISUDA_DSN'] || 'dbi:mysql:db=isuda'
     set :isuda_origin, ENV['ISUDA_ORIGIN'] || 'http://localhost:5000'
 
-
-set :raise_errors, true
-set :dump_errors, false
-set :show_exceptions, false
-
     configure :development do
       require 'sinatra/reloader'
 
