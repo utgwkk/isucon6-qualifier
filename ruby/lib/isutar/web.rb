@@ -14,7 +14,15 @@ module Isutar
     set :db_user, ENV['ISUTAR_DB_USER'] || 'root'
     set :db_password, ENV['ISUTAR_DB_PASSWORD'] || ''
     set :dsn, ENV['ISUTAR_DSN'] || 'dbi:mysql:db=isutar'
+    set :isuda_db_user, ENV['ISUDA_DB_USER'] || 'root'
+    set :isuda_db_password, ENV['ISUDA_DB_PASSWORD'] || ''
+    set :isuda_dsn, ENV['ISUDA_DSN'] || 'dbi:mysql:db=isuda'
     set :isuda_origin, ENV['ISUDA_ORIGIN'] || 'http://localhost:5000'
+
+
+set :raise_errors, true
+set :dump_errors, false
+set :show_exceptions, false
 
     configure :development do
       require 'sinatra/reloader'
@@ -31,6 +39,23 @@ module Isutar
             mysql = Mysql2::Client.new(
               username: settings.db_user,
               password: settings.db_password,
+              database: attrs['db'],
+              encoding: 'utf8mb4',
+              init_command: %|SET SESSION sql_mode='TRADITIONAL,NO_AUTO_VALUE_ON_ZERO,ONLY_FULL_GROUP_BY'|,
+            )
+            mysql.query_options.update(symbolize_keys: true)
+            mysql
+          end
+      end
+
+      def db_isuda
+        Thread.current[:db_isuda] ||=
+          begin
+            _, _, attrs_part = settings.isuda_dsn.split(':', 3)
+            attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+            mysql = Mysql2::Client.new(
+              username: settings.isuda_db_user,
+              password: settings.isuda_db_password,
               database: attrs['db'],
               encoding: 'utf8mb4',
               init_command: %|SET SESSION sql_mode='TRADITIONAL,NO_AUTO_VALUE_ON_ZERO,ONLY_FULL_GROUP_BY'|,
@@ -58,11 +83,12 @@ module Isutar
 
     post '/stars' do
       keyword = params[:keyword]
+      entry = db_isuda.xquery(%| select * from entry where keyword = ? |, keyword).first or halt(404)
 
-      isuda_keyword_url = URI(settings.isuda_origin)
-      isuda_keyword_url.path = '/keyword/%s' % [Rack::Utils.escape_path(keyword)]
-      res = Net::HTTP.get_response(isuda_keyword_url)
-      halt(404) unless Net::HTTPSuccess === res
+      # isuda_keyword_url = URI(settings.isuda_origin)
+      # isuda_keyword_url.path = '/keyword/%s' % [Rack::Utils.escape_path(keyword)]
+      # res = Net::HTTP.get_response(isuda_keyword_url)
+      # halt(404) unless Net::HTTPSuccess === res
 
       user_name = params[:user]
       db.xquery(%|
