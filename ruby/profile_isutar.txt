@@ -1,0 +1,1154 @@
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   1.0ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[37m   2.7ms     1 |  59        content_type :json
+[0m[90m               |  60        JSON.generate(stars: stars)
+[0m[90m               |  61      end
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.2ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms    16 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.4ms    16 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.5ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  66        isuda_keyword_url = URI(settings.isuda_origin)
+[0m[90m               |  67        isuda_keyword_url.path = '/keyword/%s' % [Rack::Utils.escape_path(keyword)]
+[0m[31m  80.6ms     1 |  68        res = Net::HTTP.get_response(isuda_keyword_url)
+[0m[90m               |  69        halt(404) unless Net::HTTPSuccess === res
+[0m[90m               |  70  
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  66        isuda_keyword_url = URI(settings.isuda_origin)
+[0m[90m               |  67        isuda_keyword_url.path = '/keyword/%s' % [Rack::Utils.escape_path(keyword)]
+[0m[31m  77.1ms     1 |  68        res = Net::HTTP.get_response(isuda_keyword_url)
+[0m[90m               |  69        halt(404) unless Net::HTTPSuccess === res
+[0m[90m               |  70  
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  66        isuda_keyword_url = URI(settings.isuda_origin)
+[0m[90m               |  67        isuda_keyword_url.path = '/keyword/%s' % [Rack::Utils.escape_path(keyword)]
+[0m[31m  78.3ms     1 |  68        res = Net::HTTP.get_response(isuda_keyword_url)
+[0m[90m               |  69        halt(404) unless Net::HTTPSuccess === res
+[0m[90m               |  70  
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.6ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.5ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.7ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms    16 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms    16 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[37m   0.4ms     1 |  59        content_type :json
+[0m[90m               |  60        JSON.generate(stars: stars)
+[0m[90m               |  61      end
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.7ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.2ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.2ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.2ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.6ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms    16 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms    16 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.3ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.2ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.3ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.2ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms    16 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.5ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms    16 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.5ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.7ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.5ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.4ms    16 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms    16 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.3ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.2ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms    16 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms    16 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     4 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.6ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms    16 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms    16 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m
+[34m
+[Rack::Lineprof] ===============================================================[0m
+
+lib/isutar/web.rb
+[90m               |  33              _, _, attrs_part = settings.dsn.split(':', 3)
+[0m[90m               |  34              attrs = Hash[attrs_part.split(';').map {|part| part.split('=', 2) }]
+[0m[37m   0.4ms     2 |  35              mysql = Mysql2::Client.new(
+[0m[90m               |  36                username: settings.db_user,
+[0m[90m               |  37                password: settings.db_password,
+[0m[90m              .......[0m
+[90m               |  55      get '/stars' do
+[0m[90m               |  56        keyword = params[:keyword] || ''
+[0m[37m   0.3ms     7 |  57        stars = db.xquery(%| select * from star where keyword = ? |, keyword).to_a
+[0m[90m               |  58  
+[0m[90m               |  59        content_type :json
+[0m

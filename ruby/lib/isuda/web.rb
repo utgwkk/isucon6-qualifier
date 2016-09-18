@@ -24,6 +24,11 @@ module Isuda
     set :isupam_origin, ENV['ISUPAM_ORIGIN'] || 'http://localhost:5050'
     set :isutar_origin, ENV['ISUTAR_ORIGIN'] || 'http://localhost:5001'
 
+
+set :raise_errors, true
+set :dump_errors, false
+set :show_exceptions, false
+
     configure :development do
       require 'sinatra/reloader'
 

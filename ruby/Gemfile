@@ -12,4 +12,5 @@ group :development do
   gem 'foreman'
   gem 'sinatra-contrib', require: nil
   gem 'rack-lineprof'
+  gem 'pry'
 end
